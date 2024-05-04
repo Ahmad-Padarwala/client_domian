@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import BoardingPath from "./navigation/BoardingPath";
+import Index from "./navigation/index";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <BoardingPath />
+      <Index />
     </NavigationContainer>
   );
 }

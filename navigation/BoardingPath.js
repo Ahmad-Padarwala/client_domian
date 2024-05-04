@@ -2,8 +2,9 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import Contact from "../screens/contact/Contact";
+import Contact from "../screens/customer/Customer";
 import Favourite from "../screens/favourite/Favourite";
+import { primaryColor } from "../styles/style";
 
 const Stack = createNativeStackNavigator();
 const TabNavigator = createBottomTabNavigator();
@@ -31,19 +32,18 @@ const MainNavigator = () => {
         tabBarIconStyle: {
           top: 4,
         },
-        tabBarActiveBackgroundColor: "#03C03C",
+        tabBarActiveBackgroundColor: primaryColor,
       }}
     >
       <TabNavigator.Screen
-        name="Favourite"
-        component={Favourite}
+        name="Customer"
+        component={Contact}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {
             return (
               <Ionicons
-                // name="star-outline"
-                name={focused ? "star" : "star-outline"}
+                name={focused ? "people" : "people-outline"}
                 size={22}
                 color={focused ? "white" : "black"}
                 style={{ padding: 0, margin: 0 }}
@@ -53,14 +53,14 @@ const MainNavigator = () => {
         }}
       />
       <TabNavigator.Screen
-        name="Contact"
-        component={Contact}
+        name="Favourite"
+        component={Favourite}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused }) => {
             return (
               <Ionicons
-                name={focused ? "people" : "people-outline"}
+                name={focused ? "star" : "star-outline"}
                 size={22}
                 color={focused ? "white" : "black"}
                 style={{ padding: 0, margin: 0 }}
